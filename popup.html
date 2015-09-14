@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+  <head>
+  	<!-- Scripts -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/ui-bootstrap-tpls-0.2.0.js"></script>
+	<script src="js/moment-with-locales.min.js"></script>
+	<script src="js/popup.js"></script>
+	<!-- Cascading Style Sheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/angular-csp.css">
+	<link rel="stylesheet" href="css/popup.css">
+    <title>Galaxy</title>
+  </head>
+  <body>
+
+	<div class="container" style="width: 325px" ng-app="myApp" ng-controller="myCtrl" ng-csp>
+	    <h2>Galaxy</h2>
+	    <form role="form">
+	    	<table class="table">
+	    		<tr>
+	    			<td></td>
+					<td>Name</td>
+					<td>{{player.name}}</td>
+				</tr>
+				<tr>
+	    			<td></td>
+					<td>Producing</td>
+					<td>{{player.producing}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="gold"></td>
+					<td>Gold</td>
+					<td>{{player.gold}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="ore"></td>
+					<td>Ore</td>
+					<td>{{player.ore}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="tech"></td>
+					<td>Tech Level</td>
+					<td>{{player.tech}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="ship"></td>
+					<td>
+						<select class="btn btn-mini" ng-model="ship_type">
+							<option>Corvette</option>
+							<option>Scout </option>
+							<option>Transport&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+						</select>
+						<span class="caret"></span>
+					</td>
+					<td>{{player.fleets[0][3]}}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button id="calculateBtn" class="btn btn-default" ng-click="build()">Ok</button></td>
+					<td></td>
+				</tr>
+	    	</table>
+	    </form>
+
+
+		<!-- The actual modal template, just a bit o bootstrap -->
+		<script type="text/ng-template" id="modal.html">
+			<div class="modal fade">
+				<div class="modal-dialog">
+		    		<div class="modal-content">
+						<div class="modal-header">
+		    				<button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+		    				<h4 class="modal-title">Yes or No?</h4>
+		      			</div>
+		      			<div class="modal-body">
+		        			<p>It's your call...</p>
+		      			</div>
+		      			<div class="modal-footer">
+		        			<button type="button" ng-click="close('No')" class="btn btn-default" data-dismiss="modal">No</button>
+		        			<button type="button" ng-click="close('Yes')" class="btn btn-primary" data-dismiss="modal">Yes</button>
+		      			</div>
+		    		</div>
+				</div>
+			</div>
+		</script>
+    </div>
+  </body>
+</html>
+
+

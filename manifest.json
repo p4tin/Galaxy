@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Galaxy",
+  "description": "Fun little game of space exploration and conquest",
+  "version": "1.0",
+  "icons": { "16": "img/star.png",
+			 "48": "img/star.png",
+			 "128": "img/star.png" },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "browser_action": {
+   "default_icon": "img/star.png",
+   "default_popup": "popup.html"
+  }
+}
