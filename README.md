@@ -1,4 +1,4 @@
-This is a Google Chrome Extension to Calculate a Date and time in the future by adding hours and mins to the current time.
+This is a Google Chrome Extension to to play a simple game of space exploration and conquest.
 
 Used Bootstrap and Angualr JS to make this.
 
