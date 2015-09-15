@@ -1,0 +1,47 @@
+	    <h2>Galaxy</h2>
+	    <form role="form">
+	    	<table class="table">
+	    		<tr>
+	    			<td></td>
+					<td>Name</td>
+					<td>{{player.name}}</td>
+				</tr>
+				<tr>
+	    			<td></td>
+					<td>Producing</td>
+					<td>{{player.producing}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="gold"></td>
+					<td>Gold</td>
+					<td>{{player.gold}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="ore"></td>
+					<td>Ore</td>
+					<td>{{player.ore}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="tech"></td>
+					<td>Tech Level</td>
+					<td>{{player.tech}}</td>
+				</tr>
+				<tr>
+					<td><input type="radio" ng-model="producing" value="ship"></td>
+					<td>
+						<select class="btn btn-mini" ng-model="ship_type">
+							<option>Corvette</option>
+							<option>Scout </option>
+							<option>Transport&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+						</select>
+						<span class="caret"></span>
+					</td>
+					<td>{{player.fleets[0][3]}}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button id="calculateBtn" class="btn btn-default" ng-click="build()">Ok</button></td>
+					<td></td>
+				</tr>
+	    	</table>
+	    </form>

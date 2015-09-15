@@ -1,6 +1,23 @@
-var myApp = angular.module('myApp',['ui.bootstrap']);
+var myApp = angular.module('myApp',['ngRoute']);
 
-myApp.controller('myCtrl', function($scope, $interval, $dialog) {
+// configure our routes
+myApp.config(function($routeProvider) {
+    $routeProvider
+
+        // route for the login page
+        .when('/', {
+            templateUrl : 'login.html',
+            controller  : 'myCtrl'
+        })
+
+        // route for the game page
+        .when('/game', {
+            templateUrl : 'game.html',
+            controller  : 'myCtrl'
+        })
+});
+
+myApp.controller('myCtrl', function($scope, $interval) {
     $interval($scope.reloadPlayer, 2000);
     $scope.player = {};
     
@@ -10,8 +27,6 @@ myApp.controller('myCtrl', function($scope, $interval, $dialog) {
     $scope.ship_type = '';
 
     $scope.build = function() {
-
-        $dialog.dialog({}).open('../modalContent.html'); 
 
         bg.player.producing = $scope.producing;
         if($scope.producing === 'ship') {
