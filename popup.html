@@ -18,10 +18,20 @@
   <body>
 
 	<div class="container" style="width: 325px" ng-app="myApp" ng-controller="myCtrl" ng-csp>
-		<div id="main">
-			<!-- content goes here -->
-			<div ng-view></div>
-		</div>
+		<section class="tab">
+	        <ul class="nav nav-pills">
+	          	<li>
+	            	<a href="#actions">Actions</a></li>
+	          	<li>
+					<a href="#map">Map</a></li>
+	          	<li>
+	           		<a href="#fleets">Fleets</a></li>
+	        </ul>
+	        <div id="main">
+				<!-- content goes here -->
+				<div ng-view></div>
+			</div>
+      	</section>
     </div>
   </body>
 </html>

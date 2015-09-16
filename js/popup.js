@@ -11,8 +11,20 @@ myApp.config(function($routeProvider) {
         })
 
         // route for the game page
-        .when('/game', {
-            templateUrl : 'game.html',
+        .when('/actions', {
+            templateUrl : 'actions.html',
+            controller  : 'myCtrl'
+        })
+
+        // route for the game page
+        .when('/map', {
+            templateUrl : 'map.html',
+            controller  : 'myCtrl'
+        })
+
+        // route for the game page
+        .when('/fleets', {
+            templateUrl : 'fleets.html',
             controller  : 'myCtrl'
         })
 });
